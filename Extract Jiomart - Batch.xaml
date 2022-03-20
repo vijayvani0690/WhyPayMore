@@ -1,0 +1,558 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Extract_Big_Basket" this:Extract_Big_Basket.categoryURL="https://www.jiomart.com/c/groceries/fruits-vegetables/fresh-vegetables/229" this:Extract_Big_Basket.selectedCity="Chennai" this:Extract_Big_Basket.selectedCategoryMain="Grocery" this:Extract_Big_Basket.selectedCategorySub1="Fresh Vegetables" this:Extract_Big_Basket.selectedCategorySub2="Vegetables" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="categoryURL" Type="InArgument(x:String)" />
+    <x:Property Name="selectedCity" Type="InArgument(x:String)" />
+    <x:Property Name="selectedCategoryMain" Type="InArgument(x:String)" />
+    <x:Property Name="selectedCategorySub1" Type="InArgument(x:String)" />
+    <x:Property Name="selectedCategorySub2" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1551.2,6761.6</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Extract_Big_Basket_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="32">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="29">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Extract_Big_Basket" sap:VirtualizedContainerService.HintSize="1561.6,6696.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="finalProductListString">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String" Value="" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="noOfItems" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="1520,6604" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[categoryURL]">
+      <ui:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence sap:VirtualizedContainerService.HintSize="1486.4,6501.6" sap2010:WorkflowViewState.IdRef="Sequence_38">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1444.8,6300" sap2010:WorkflowViewState.IdRef="Sequence_37">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="1403.2,22.4" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+              <Sequence sap:VirtualizedContainerService.HintSize="1403.2,6144.8" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:String" Default="Yes" Name="runMore" />
+                  <Variable x:TypeArguments="x:String" Name="itemList" />
+                  <Variable x:TypeArguments="x:String" Name="itemListPrevious">
+                    <Variable.Default>
+                      <Literal x:TypeArguments="x:String" Value="" />
+                    </Variable.Default>
+                  </Variable>
+                  <Variable x:TypeArguments="s:String[]" Name="finalProductlListArray" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:InterruptibleWhile Condition="[runMore.Equals(&quot;Yes&quot;)]" DisplayName="While" sap:VirtualizedContainerService.HintSize="1361.6,6052" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                  <ui:InterruptibleWhile.Body>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1326.4,5884.8" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Sequence sap:VirtualizedContainerService.HintSize="1284.8,5692" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:InvokeCode ContinueOnError="{x:Null}" Code="ExtractDataTable.Columns.Add(&quot;0&quot;, GetType(String))&#xA;ExtractDataTable.Columns.Add(&quot;1&quot;, GetType(String))&#xA;ExtractDataTable.Columns.Add(&quot;2&quot;, GetType(String))&#xA;ExtractDataTable.Columns.Add(&quot;3&quot;, GetType(String))&#xA;ExtractDataTable.Columns.Add(&quot;4&quot;, GetType(String))&#xA;ExtractDataTable.Columns.Add(&quot;5&quot;, GetType(String))&#xA;ExtractDataTable.Columns.Add(&quot;6&quot;, GetType(String))&#xA;ExtractDataTable.Columns.Add(&quot;7&quot;, GetType(String))&#xA;ExtractDataTable.Columns.Add(&quot;8&quot;, GetType(String))&#xA;ExtractDataTable.Columns.Add(&quot;9&quot;, GetType(String))&#xA;ExtractDataTable.Columns.Add(&quot;10&quot;, GetType(String))&#xA;ExtractDataTable.Columns.Add(&quot;11&quot;, GetType(String))&#xA;ExtractDataTable.Columns.Add(&quot;12&quot;, GetType(String))" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="1243.2,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
+                          <ui:InvokeCode.Arguments>
+                            <InOutArgument x:TypeArguments="sd:DataTable" x:Key="ExtractDataTable">[ExtractDataTable]</InOutArgument>
+                          </ui:InvokeCode.Arguments>
+                        </ui:InvokeCode>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1243.2,5394.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:InterruptibleDoWhile Condition="[Not itemList.Equals(&quot;&quot;)]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="1201.6,3834.4" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+                            <ui:InterruptibleDoWhile.Body>
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1166.4,3667.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign sap:VirtualizedContainerService.HintSize="1124.8,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[itemList]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <Literal x:TypeArguments="x:String" Value="" />
+                                    </InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="1124.8,22.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                                <ui:InjectJsScript InputParameter="{x:Null}" ScriptOutput="{x:Null}" DisplayName="Inject Js Script" sap:VirtualizedContainerService.HintSize="1124.8,117.6" sap2010:WorkflowViewState.IdRef="InjectJsScript_3" ScriptCode="function(e){&#xA;window.scrollTo(0,400)&#xA;}">
+                                  <ui:InjectJsScript.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="6cf9cff8-599f-46ba-82d8-244657f6b6c3">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:InjectJsScript.Target>
+                                </ui:InjectJsScript>
+                                <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="1124.8,22.4" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                                <ui:InjectJsScript InputParameter="{x:Null}" ScriptOutput="{x:Null}" DisplayName="Inject Js Script" sap:VirtualizedContainerService.HintSize="1124.8,117.6" sap2010:WorkflowViewState.IdRef="InjectJsScript_4" ScriptCode="function(e){&#xA;window.scrollTo(0,800)&#xA;}">
+                                  <ui:InjectJsScript.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="6cf9cff8-599f-46ba-82d8-244657f6b6c3">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:InjectJsScript.Target>
+                                </ui:InjectJsScript>
+                                <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="1124.8,22.4" sap2010:WorkflowViewState.IdRef="Delay_4" />
+                                <ui:InjectJsScript InputParameter="{x:Null}" ScriptOutput="{x:Null}" DisplayName="Inject Js Script" sap:VirtualizedContainerService.HintSize="1124.8,117.6" sap2010:WorkflowViewState.IdRef="InjectJsScript_5" ScriptCode="function(e){&#xA;window.scrollTo(0,1200)&#xA;}">
+                                  <ui:InjectJsScript.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="6cf9cff8-599f-46ba-82d8-244657f6b6c3">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:InjectJsScript.Target>
+                                </ui:InjectJsScript>
+                                <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="1124.8,22.4" sap2010:WorkflowViewState.IdRef="Delay_6" />
+                                <ui:InjectJsScript InputParameter="{x:Null}" ScriptOutput="{x:Null}" DisplayName="Inject Js Script" sap:VirtualizedContainerService.HintSize="1124.8,117.6" sap2010:WorkflowViewState.IdRef="InjectJsScript_10" ScriptCode="function(e){&#xA;window.scrollTo(0,1800)&#xA;}">
+                                  <ui:InjectJsScript.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="6cf9cff8-599f-46ba-82d8-244657f6b6c3">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:InjectJsScript.Target>
+                                </ui:InjectJsScript>
+                                <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="1124.8,22.4" sap2010:WorkflowViewState.IdRef="Delay_7" />
+                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1124.8,2532" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign sap:VirtualizedContainerService.HintSize="1083.2,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[itemList]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <Literal x:TypeArguments="x:String" Value="" />
+                                      </InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="1083.2,22.4" sap2010:WorkflowViewState.IdRef="Delay_3" />
+                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1083.2,2276.8" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                    <Sequence.Variables>
+                                      <Variable x:TypeArguments="x:String" Name="variable1" />
+                                    </Sequence.Variables>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:InjectJsScript InputParameter="{x:Null}" DisplayName="Inject Js Script" sap:VirtualizedContainerService.HintSize="1041.6,117.6" sap2010:WorkflowViewState.IdRef="InjectJsScript_11" ScriptCode="function(e){&#xD;&#xA;return document.querySelector('.row.product-list').querySelectorAll('.cat-item.viewed').length;&#xD;&#xA;}&#xD;&#xA;">
+                                      <ui:InjectJsScript.ScriptOutput>
+                                        <OutArgument x:TypeArguments="x:String">[noOfItems]</OutArgument>
+                                      </ui:InjectJsScript.ScriptOutput>
+                                      <ui:InjectJsScript.Target>
+                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e696db2b-938f-4d95-a8a5-b7b26ffdcaea" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='mstar_box' tag='DIV' /&gt;">
+                                          <ui:Target.TimeoutMS>
+                                            <InArgument x:TypeArguments="x:Int32" />
+                                          </ui:Target.TimeoutMS>
+                                          <ui:Target.WaitForReady>
+                                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                                          </ui:Target.WaitForReady>
+                                        </ui:Target>
+                                      </ui:InjectJsScript.Target>
+                                    </ui:InjectJsScript>
+                                    <ui:InjectJsScript InputParameter="{x:Null}" ContinueOnError="True" DisplayName="Inject Js Script 'DIV'" sap:VirtualizedContainerService.HintSize="1041.6,156" sap2010:WorkflowViewState.IdRef="InjectJsScript_6" ScriptCode="function(e){&#xD;&#xA;&#xD;&#xA; var idList = '';&#xD;&#xA; for(var i=0;i&lt;document.querySelector('.row.product-list').querySelectorAll('.cat-item.viewed').length;i++){&#xD;&#xA;&#x9;if(i==0){&#xD;&#xA;&#x9;&#x9;idList = document.querySelector('.row.product-list').querySelectorAll('.cat-item.viewed')[i].querySelector('a').title.trim();//Product Name&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;}else{&#xD;&#xA;&#x9;&#x9;idList = idList + '$$$$' + document.querySelector('.row.product-list').querySelectorAll('.cat-item.viewed')[i].querySelector('a').title.trim();//Product Name&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;idList = idList + '##' + document.querySelector('.row.product-list').querySelectorAll('.cat-item.viewed')[i].querySelector('a').href;//Link&#xD;&#xA;&#x9;var unit = '';//document.querySelectorAll('.item.prod-deck')[i].querySelector('span[ng-bind=\'vm.selectedProduct.w\']').innerText.split(' ')[1];&#xD;&#xA;&#x9;var price = Number(document.querySelector('.row.product-list').querySelectorAll('.cat-item.viewed')[i].querySelector('.price-box').innerText.split('₹')[1].trim().split(' ')[0].replaceAll(',',''));&#xD;&#xA;&#x9;quantity = 1;&#xD;&#xA;&#x9;var unitOrQantity = document.querySelector('.row.product-list').querySelectorAll('.cat-item.viewed')[i].querySelector('a').title.trim();&#xD;&#xA;&#x9;unitOrQantity = unitOrQantity.replace('(kg)', '1 kg').replace('(Kg)', '1 kg').replace(' (Pack)','').replace('  (Pouch)','').replace(' (Bottle)','').replace(' (Value Pack)','').replace(' Free','').replace(' (Bottle)','').replaceAll('\)','').replace(' per ', ' 1 ');&#xD;&#xA;&#x9;var unitOrQantityList = unitOrQantity.split(' ');&#xD;&#xA;&#x9;unitOrQantityLength = unitOrQantityList.length;&#xD;&#xA;&#x9;if(!!unitOrQantityList[unitOrQantityLength-3] &amp;&amp; unitOrQantityList[unitOrQantityLength-3]=='\(Pack'){&#xD;&#xA;&#x9;&#x9;unit = 'pc';&#xD;&#xA;&#x9;&#x9;quantity = Number(unitOrQantityList[unitOrQantityLength-1]);&#xD;&#xA;&#x9;}else{&#xD;&#xA;&#x9;&#x9;unit = unitOrQantityList[unitOrQantityLength-1];&#xD;&#xA;&#x9;&#x9;quantity = Number(unitOrQantityList[unitOrQantityLength-2]);&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;if(unit=='g' || unit=='ml'){&#xD;&#xA;&#x9;&#x9;if (typeof quantity != 'number'  || !quantity) {&#xD;&#xA;&#x9;&#x9;&#x9;  quantity=1000;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;price = (1000/quantity) * price;&#xD;&#xA;&#x9;} else if(unit=='kg' || unit =='L'){&#xD;&#xA;&#x9;&#x9;if (typeof quantity != 'number'  || !quantity) {&#xD;&#xA;&#x9;&#x9;&#x9;  quantity=1;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;price = price / quantity;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;if (typeof quantity != 'number'  || !quantity) {&#xD;&#xA;&#x9;&#x9;&#x9;  quantity=1;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;idList = idList + '##' + price.toFixed(2) ;//Price&#xD;&#xA;&#x9;idList = idList + '##' + quantity;//Quanityt&#xD;&#xA;&#x9;idList = idList + '##' + unit;//Unit&#xD;&#xA;&#x9;idList = idList + '##' + document.querySelector('.row.product-list').querySelectorAll('.cat-item.viewed')[i].querySelector('a').href.split('/')[6];//ID&#xD;&#xA;&#x9;idList = idList + '##' + document.querySelector('.row.product-list').querySelectorAll('.cat-item.viewed')[i].querySelector('img').src;//Image&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;&#xD;&#xA; }&#xD;&#xA; return( idList);&#xD;&#xA;}&#xD;&#xA;">
+                                      <ui:InjectJsScript.ScriptOutput>
+                                        <OutArgument x:TypeArguments="x:String">[itemList]</OutArgument>
+                                      </ui:InjectJsScript.ScriptOutput>
+                                      <ui:InjectJsScript.Target>
+                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f8a83ba9-4d5f-4f9d-9132-ff64f52b9f5b" InformativeScreenshot="38f38a6a81639ef5be7378a01e10c511" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='mstar_box' tag='DIV' /&gt;">
+                                          <ui:Target.TimeoutMS>
+                                            <InArgument x:TypeArguments="x:Int32" />
+                                          </ui:Target.TimeoutMS>
+                                          <ui:Target.WaitForReady>
+                                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                                          </ui:Target.WaitForReady>
+                                        </ui:Target>
+                                      </ui:InjectJsScript.Target>
+                                    </ui:InjectJsScript>
+                                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="1041.6,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[itemList]" />
+                                    <If Condition="[itemList.Equals(itemListPrevious)]" sap:VirtualizedContainerService.HintSize="1041.6,1728" sap2010:WorkflowViewState.IdRef="If_7">
+                                      <If.Then>
+                                        <Sequence sap:VirtualizedContainerService.HintSize="304,152.8" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[itemList]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">
+                                                <Literal x:TypeArguments="x:String" Value="" />
+                                              </InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </Sequence>
+                                      </If.Then>
+                                      <If.Else>
+                                        <Sequence sap:VirtualizedContainerService.HintSize="693.6,1568.8" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                          <Sequence.Variables>
+                                            <Variable x:TypeArguments="s:String[]" Name="itemListArray" />
+                                          </Sequence.Variables>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Assign sap:VirtualizedContainerService.HintSize="652,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="s:String[]">[itemListArray]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="s:String[]">[Split(itemList,"$$$$")]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <If Condition="[finalProductListString.Equals(&quot;&quot;)]" sap:VirtualizedContainerService.HintSize="652,312" sap2010:WorkflowViewState.IdRef="If_5">
+                                            <If.Then>
+                                              <Sequence sap:VirtualizedContainerService.HintSize="304,152.8" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:String">[finalProductListString]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:String">[itemList]</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                              </Sequence>
+                                            </If.Then>
+                                            <If.Else>
+                                              <Sequence sap:VirtualizedContainerService.HintSize="304,152.8" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:String">[finalProductListString]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:String">[finalProductListString + "$$$$" + itemList]</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                              </Sequence>
+                                            </If.Else>
+                                          </If>
+                                          <If Condition="[Int32.Parse(noOfItems)&gt;0]" sap:VirtualizedContainerService.HintSize="652,766.4" sap2010:WorkflowViewState.IdRef="If_6">
+                                            <If.Then>
+                                              <Sequence sap:VirtualizedContainerService.HintSize="475.2,577.6" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="433.6,484.8" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[itemListArray]">
+                                                  <ui:ForEach.Body>
+                                                    <ActivityAction x:TypeArguments="x:String">
+                                                      <ActivityAction.Argument>
+                                                        <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+                                                      </ActivityAction.Argument>
+                                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="375.2,360" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="333.6,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[item]" />
+                                                        <ui:InvokeCode ContinueOnError="{x:Null}" Code="ExtractDataTable.Rows.Add(New Object() {Split(item,&quot;##&quot;)(5),Split(item,&quot;##&quot;)(0),Split(item,&quot;##&quot;)(2),Split(item,&quot;##&quot;)(4),Split(item,&quot;##&quot;)(3),Split(item,&quot;##&quot;)(1),categoryMain,categorySub1,categorySub2,Now.ToString(&quot;dd/MM/yyyy hh:mm&quot;),&quot;Jiomart&quot;,city,Split(item,&quot;##&quot;)(6)})" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="333.6,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
+                                                          <ui:InvokeCode.Arguments>
+                                                            <InOutArgument x:TypeArguments="sd:DataTable" x:Key="ExtractDataTable">
+                                                              <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="ExtractDataTable" />
+                                                            </InOutArgument>
+                                                            <InArgument x:TypeArguments="x:String" x:Key="item">
+                                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="item" />
+                                                            </InArgument>
+                                                            <InArgument x:TypeArguments="x:String" x:Key="city">
+                                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="selectedCity" />
+                                                            </InArgument>
+                                                            <InArgument x:TypeArguments="x:String" x:Key="categorySub1">
+                                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="selectedCategorySub1" />
+                                                            </InArgument>
+                                                            <InArgument x:TypeArguments="x:String" x:Key="categoryMain">
+                                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="selectedCategoryMain" />
+                                                            </InArgument>
+                                                            <InArgument x:TypeArguments="x:String" x:Key="categorySub2">
+                                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="selectedCategorySub2" />
+                                                            </InArgument>
+                                                          </ui:InvokeCode.Arguments>
+                                                        </ui:InvokeCode>
+                                                      </Sequence>
+                                                    </ActivityAction>
+                                                  </ui:ForEach.Body>
+                                                </ui:ForEach>
+                                              </Sequence>
+                                            </If.Then>
+                                            <If.Else>
+                                              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_21">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </Sequence>
+                                            </If.Else>
+                                          </If>
+                                          <ui:InjectJsScript InputParameter="{x:Null}" ScriptOutput="{x:Null}" ContinueOnError="True" DisplayName="Inject Js Script" sap:VirtualizedContainerService.HintSize="652,117.6" sap2010:WorkflowViewState.IdRef="InjectJsScript_7" ScriptCode="function(e){&#xA;&#x9;document.querySelector('.next&gt;a').click();&#xA;}">
+                                            <ui:InjectJsScript.Target>
+                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="55369f45-45cb-44e3-97bb-35c22883f8c7">
+                                                <ui:Target.TimeoutMS>
+                                                  <InArgument x:TypeArguments="x:Int32" />
+                                                </ui:Target.TimeoutMS>
+                                                <ui:Target.WaitForReady>
+                                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                </ui:Target.WaitForReady>
+                                              </ui:Target>
+                                            </ui:InjectJsScript.Target>
+                                          </ui:InjectJsScript>
+                                          <Assign sap:VirtualizedContainerService.HintSize="652,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[itemListPrevious]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[itemList]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </Sequence>
+                                      </If.Else>
+                                    </If>
+                                  </Sequence>
+                                </Sequence>
+                              </Sequence>
+                            </ui:InterruptibleDoWhile.Body>
+                          </ui:InterruptibleDoWhile>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="1201.6,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[finalProductListString]" />
+                          <Assign sap:VirtualizedContainerService.HintSize="1201.6,60" sap2010:WorkflowViewState.IdRef="Assign_19">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="s:String[]">[finalProductlListArray]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="s:String[]">[Split(finalProductListString,"$$$$")]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <If Condition="False" sap:VirtualizedContainerService.HintSize="1201.6,612.8" sap2010:WorkflowViewState.IdRef="If_8">
+                            <If.Then>
+                              <Sequence sap:VirtualizedContainerService.HintSize="475.2,424" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="433.6,331.2" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[finalProductlListArray]">
+                                  <ui:ForEach.Body>
+                                    <ActivityAction x:TypeArguments="x:String">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="x:String" Name="product" />
+                                      </ActivityAction.Argument>
+                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="375.2,206.4" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Upload to Django workflow" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Upload to Django.xaml">
+                                          <ui:InvokeWorkflowFile.Arguments>
+                                            <InArgument x:TypeArguments="x:String" x:Key="product_string">[product]</InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="vendor">Jiomart</InArgument>
+                                          </ui:InvokeWorkflowFile.Arguments>
+                                        </ui:InvokeWorkflowFile>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ui:ForEach.Body>
+                                </ui:ForEach>
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_34">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                          <If Condition="[Int32.Parse(noOfItems)&gt;0]" sap:VirtualizedContainerService.HintSize="1201.6,572" sap2010:WorkflowViewState.IdRef="If_2">
+                            <If.Then>
+                              <Sequence sap:VirtualizedContainerService.HintSize="475.2,383.2" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="433.6,290.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="F:\why_pay_more_project\data\payless_product - Consolidated.xlsx">
+                                  <ui:ExcelApplicationScope.Body>
+                                    <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                      </ActivityAction.Argument>
+                                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,180.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:ExcelAppendRange DataTable="[ExtractDataTable]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="ExcelAppendRange_1" SheetName="payless_product" />
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ui:ExcelApplicationScope.Body>
+                                </ui:ExcelApplicationScope>
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                        </Sequence>
+                      </Sequence>
+                      <Assign sap:VirtualizedContainerService.HintSize="1284.8,60" sap2010:WorkflowViewState.IdRef="Assign_20">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[runMore]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">No</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </ui:InterruptibleWhile.Body>
+                </ui:InterruptibleWhile>
+              </Sequence>
+            </Sequence>
+            <ui:CloseWindow Selector="{x:Null}" TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="Close Window" sap:VirtualizedContainerService.HintSize="1444.8,68.8" sap2010:WorkflowViewState.IdRef="CloseWindow_1" WaitForReady="INTERACTIVE" />
+          </Sequence>
+        </ActivityAction>
+      </ui:OpenBrowser.Body>
+    </ui:OpenBrowser>
+  </Sequence>
+</Activity>

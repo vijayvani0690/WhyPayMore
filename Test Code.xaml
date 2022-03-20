@@ -1,0 +1,68 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Test_Code" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="911.2,424" sap2010:WorkflowViewState.IdRef="Test_Code_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Test_Code" sap:VirtualizedContainerService.HintSize="375.2,248.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InjectJsScript InputParameter="{x:Null}" ScriptOutput="{x:Null}" DisplayName="Inject Js Script 'DIV'" sap:VirtualizedContainerService.HintSize="333.6,156" sap2010:WorkflowViewState.IdRef="InjectJsScript_1" ScriptCode="function(e){&#xD;&#xA;&#xD;&#xA;&#x9; var idList = '';&#xD;&#xA;&#x9; for(var i=0;i&lt;document.querySelectorAll('[style^=\'width: 25').length;i++){&#xD;&#xA;&#x9;&#x9;if(i==0){&#xD;&#xA;&#x9;&#x9;&#x9;idList = document.querySelectorAll('[style^=\'width: 25')[i].querySelectorAll('a')[1].title.trim();//Product Name&#xD;&#xA;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;idList = idList + '$$$$' + document.querySelectorAll('[style^=\'width: 25')[i].querySelectorAll('a')[1].title.trim();//Product Name&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;idList = idList + '##' + document.querySelectorAll('[style^=\'width: 25')[i].querySelectorAll('a')[1].href;//Link&#xD;&#xA;&#x9;&#x9;var unit = '';&#xD;&#xA;&#x9;&#x9;var price = Number(document.querySelectorAll('[style^=\'width: 25')[i].querySelectorAll('a')[1].parentElement.querySelectorAll('div')[6].innerText.split('\n')[0].replace('₹','').trim());&#xD;&#xA;&#x9;&#x9;quantity = 1;&#xD;&#xA;&#x9;&#x9;var unitOrQantity = document.querySelectorAll('[style^=\'width: 25')[i].querySelectorAll('a')[1].parentElement.querySelectorAll('div')[5].innerText.trim();&#xD;&#xA;&#x9;&#x9;unitOrQantity = unitOrQantity.replace('(kg)', '1 kg').replace('(Kg)', '1 kg').replace(' (Pack)','').replace('\)','').replace(' per ', ' 1 ');&#xD;&#xA;&#x9;&#x9;var unitOrQantityList = unitOrQantity.split(' ');&#xD;&#xA;&#x9;&#x9;unitOrQantityLength = unitOrQantityList.length;&#xD;&#xA;&#x9;&#x9;if(!!unitOrQantityList[unitOrQantityLength-3] &amp;&amp; unitOrQantityList[unitOrQantityLength-3]=='\(Pack'){&#xD;&#xA;&#x9;&#x9;&#x9;unit = 'pc';&#xD;&#xA;&#x9;&#x9;&#x9;quantity = unitOrQantityList[unitOrQantityLength-1];&#xD;&#xA;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;unit = unitOrQantityList[unitOrQantityLength-1];&#xD;&#xA;&#x9;&#x9;&#x9;quantity = unitOrQantityList[unitOrQantityLength-2];&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;if(unit=='g'){&#xD;&#xA;&#x9;&#x9;&#x9;price = (1000/quantity) * price;&#xD;&#xA;&#x9;&#x9;} else if(unit=='kg' || unit =='L'){&#xD;&#xA;&#x9;&#x9;&#x9;price = price / quantity;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;idList = idList + '##' + price.toFixed(2) ;//Price&#xD;&#xA;&#x9;&#x9;idList = idList + '##' + quantity;//Quanityt&#xD;&#xA;&#x9;&#x9;idList = idList + '##' + unit;//Unit&#xD;&#xA;&#x9;&#x9;idList = idList + '##' + document.querySelectorAll('[style^=\'width: 25')[i].querySelectorAll('a')[1].href.split('=')[1].replace('&amp;lid','');//ID&#xD;&#xA;&#x9;&#x9;idList = idList + '##' + document.querySelectorAll('[style^=\'width: 25')[i].querySelector('img').src;//Image&#xD;&#xA;&#x9;&#x9;idList = idList + '##' + document.querySelectorAll('[style^=\'width: 25')[i].querySelectorAll('a')[1].parentElement.querySelectorAll('div')[6].innerText.split('\n')[2].replace('% off','').trim()&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9; }&#xD;&#xA;&#x9; return( idList);&#xD;&#xA;&#x9;}&#xD;&#xA;">
+      <ui:InjectJsScript.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5bf53f23-5c70-4e6a-8e73-a0be62913632" InformativeScreenshot="500ba09579f10a3565410edbf484a681" Selector="&lt;html app='chrome.exe' title='Dal Pulses - Buy Dals &amp;amp; Pulses Online at Best Prices In India | Flipkart.com' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div' idx='3' parentid='container' tag='DIV' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:InjectJsScript.Target>
+    </ui:InjectJsScript>
+  </Sequence>
+</Activity>
